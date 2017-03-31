@@ -1,19 +1,18 @@
-def report(data)
+def report
   puts "Header"
-
-  yield
-  data.each do |row|
-    puts row[:name]
-  end
-
+  yield 'From block'
   puts "Footer"
 end
 
-data = [
-  {name: 'Jitu'},
-  {name: 'Razeen'}
-]
-
-report(data) do
-  puts "reached yield"
+report do |var_from_block|
+  puts var_from_block
 end
+
+# Output
+=begin
+
+Header
+From block
+Footer
+
+=end

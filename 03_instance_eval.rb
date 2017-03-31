@@ -7,5 +7,15 @@ class Report
 end
 
 Report.new() do
-  puts "reached yield"
+  puts "From block"
 end
+
+
+# Output
+=begin
+
+Header
+From block
+Footer
+
+=end
