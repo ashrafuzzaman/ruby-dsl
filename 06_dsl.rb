@@ -20,6 +20,7 @@ class Report
 
   def print
     puts @columns.map { |column| column.title }.join(', ')
+    puts '=' * 10
     @data.each do |row|
       puts @columns.map { |column| row[column.key] }.join(', ')
     end
@@ -28,7 +29,7 @@ class Report
 
   def print_footer
     if @columns.any? { |column| column.footer }
-      puts '=' * 20
+      puts '=' * 10
       footers = @columns.map do |column|
         if column.footer
           values = @data.map do |row|
@@ -36,10 +37,10 @@ class Report
           end
           values.inject{ |sum, el| sum + el }.to_f / values.size
         else
-          ''
+          ' ' * 5
         end
       end
-      puts footers.join(', ')
+      puts footers.join(' ')
     end
   end
 end
@@ -58,7 +59,11 @@ report.print()
 # Output
 =begin
 
-Jitu
-Razeen
+Nick name, Age
+==========
+Jitu, 33
+Razeen, 2
+==========
+      17.5
 
 =end
