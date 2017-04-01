@@ -6,7 +6,7 @@ class Report
   end
 end
 
-Report.new() do
+Report.new do
   puts "From block"
 end
 

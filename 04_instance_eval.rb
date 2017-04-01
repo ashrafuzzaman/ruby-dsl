@@ -10,7 +10,7 @@ class Report
   end
 end
 
-Report.new() do
+Report.new do
   my_print "From block"
 end
 

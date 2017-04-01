@@ -18,7 +18,6 @@ class Report
   end
 end
 
-
 data = [
   {name: 'Jitu', status: 'Married'},
   {name: 'Razeen', status: 'Single'}
